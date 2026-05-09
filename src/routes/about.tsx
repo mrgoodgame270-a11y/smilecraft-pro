@@ -8,16 +8,6 @@ import { Heart, Shield, Sparkles, Users } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   component: About,
-  head: () => ({
-    meta: [
-      { title: "About Decare Dental, Our Mission and Team" },
-      {
-        name: "description",
-        content:
-          "Meet the people behind Decare Dental. 15+ years of warm, modern dentistry built on trust, precision and genuine care.",
-      },
-    ],
-  }),
 });
 
 const VALUES = [

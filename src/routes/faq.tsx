@@ -7,16 +7,6 @@ import { CTABand } from "@/components/sections/CTABand";
 
 export const Route = createFileRoute("/faq")({
   component: FaqPage,
-  head: () => ({
-    meta: [
-      { title: "Frequently Asked Questions, Decare Dental" },
-      {
-        name: "description",
-        content:
-          "Insurance, pain, kids, payment plans, emergencies. Honest answers to the questions patients ask most.",
-      },
-    ],
-  }),
 });
 
 const FAQS = [

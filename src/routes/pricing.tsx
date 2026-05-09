@@ -6,16 +6,6 @@ import { CTABand } from "@/components/sections/CTABand";
 
 export const Route = createFileRoute("/pricing")({
   component: Pricing,
-  head: () => ({
-    meta: [
-      { title: "Pricing and Membership Plans, Decare Dental" },
-      {
-        name: "description",
-        content:
-          "Transparent pricing. Membership plans from $49 per month. No surprise bills, ever.",
-      },
-    ],
-  }),
 });
 
 const TIERS = [

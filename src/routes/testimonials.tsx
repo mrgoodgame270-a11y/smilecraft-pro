@@ -5,16 +5,6 @@ import { CTABand } from "@/components/sections/CTABand";
 
 export const Route = createFileRoute("/testimonials")({
   component: TestimonialsPage,
-  head: () => ({
-    meta: [
-      { title: "Patient Reviews and Stories, Decare Dental" },
-      {
-        name: "description",
-        content:
-          "Real reviews from verified patients. 5 star Google rating, 25,000+ patients treated.",
-      },
-    ],
-  }),
 });
 
 function TestimonialsPage() {

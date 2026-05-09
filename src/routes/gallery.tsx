@@ -10,16 +10,6 @@ import doc4 from "@/assets/doc-4.jpg";
 
 export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
-  head: () => ({
-    meta: [
-      { title: "Smile Gallery, Real Patient Results, Decare Dental" },
-      {
-        name: "description",
-        content:
-          "Before and after photos of real patients. Cosmetic, orthodontic, and restorative results.",
-      },
-    ],
-  }),
 });
 
 const ITEMS = [

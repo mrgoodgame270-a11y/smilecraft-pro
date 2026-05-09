@@ -8,16 +8,6 @@ import doc1 from "@/assets/doc-1.jpg";
 
 export const Route = createFileRoute("/blog")({
   component: BlogPage,
-  head: () => ({
-    meta: [
-      { title: "Dental Health Blog, Tips and Resources" },
-      {
-        name: "description",
-        content:
-          "Tips, guides and stories from the Decare Dental team. Whitening, kids, insurance and more.",
-      },
-    ],
-  }),
 });
 
 const POSTS = [

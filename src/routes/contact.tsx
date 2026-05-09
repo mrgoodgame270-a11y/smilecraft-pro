@@ -7,15 +7,6 @@ import { useState } from "react";
 
 export const Route = createFileRoute("/contact")({
   component: Contact,
-  head: () => ({
-    meta: [
-      { title: "Contact Decare Dental, Visit Us or Get In Touch" },
-      {
-        name: "description",
-        content: "Find our address, hours, phone and contact form. Open 7 days for emergencies.",
-      },
-    ],
-  }),
 });
 
 const HOURS = [

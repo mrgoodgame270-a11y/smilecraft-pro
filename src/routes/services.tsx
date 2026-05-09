@@ -6,16 +6,6 @@ import { ToothExplorer } from "@/components/unique/ToothExplorer";
 
 export const Route = createFileRoute("/services")({
   component: ServicesPage,
-  head: () => ({
-    meta: [
-      { title: "Our Dental Services, From Cleanings to Implants" },
-      {
-        name: "description",
-        content:
-          "Complete dental care under one roof. General dentistry, cosmetic, orthodontics, pediatric, implants and 24/7 emergency care.",
-      },
-    ],
-  }),
 });
 
 function ServicesPage() {

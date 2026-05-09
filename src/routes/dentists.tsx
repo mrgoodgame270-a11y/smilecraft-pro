@@ -5,16 +5,6 @@ import { CTABand } from "@/components/sections/CTABand";
 
 export const Route = createFileRoute("/dentists")({
   component: DentistsPage,
-  head: () => ({
-    meta: [
-      { title: "Meet Our Dentists at Decare Dental" },
-      {
-        name: "description",
-        content:
-          "Specialists in cosmetic dentistry, orthodontics, pediatric care and implants. Friendly, certified and genuinely caring.",
-      },
-    ],
-  }),
 });
 
 function DentistsPage() {

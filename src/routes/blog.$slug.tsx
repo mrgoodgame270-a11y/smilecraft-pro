@@ -43,12 +43,6 @@ export const Route = createFileRoute("/blog/$slug")({
     const post = POSTS[params.slug];
     return { post };
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData?.post?.title ?? "Article"} · Decare Dental Blog` },
-      { name: "description", content: loaderData?.post?.body[0] ?? "" },
-    ],
-  }),
   errorComponent: ({ error }) => (
     <div className="py-32 text-center">
       <p>{error.message}</p>

@@ -5,16 +5,6 @@ import { MessageCircle, Check, Clock, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/booking")({
   component: BookingPage,
-  head: () => ({
-    meta: [
-      { title: "Book Your Visit, Decare Dental" },
-      {
-        name: "description",
-        content:
-          "Pick your service, choose a slot, get instant SMS confirmation. No phone tag, no waiting.",
-      },
-    ],
-  }),
 });
 
 function BookingPage() {

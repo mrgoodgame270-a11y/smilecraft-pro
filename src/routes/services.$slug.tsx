@@ -11,12 +11,6 @@ export const Route = createFileRoute("/services/$slug")({
     if (!service) throw notFound();
     return { service };
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData?.service.title ?? "Service"} at Decare Dental` },
-      { name: "description", content: loaderData?.service.short ?? "" },
-    ],
-  }),
   notFoundComponent: () => (
     <div className="py-32 text-center">
       <h1 className="font-display font-bold text-3xl">Service not found</h1>
