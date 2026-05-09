@@ -7,11 +7,8 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // Cloudflare disabled — deploying to Vercel instead.
-// The "vercel" preset tells nitropack (used by TanStack Start) to emit
-// Vercel-compatible serverless output (.vercel/output).
+// Setting ssr: false will generate a purely client-side SPA with an index.html
+// which Vercel can serve natively without requiring a Node.js SSR server.
 export default defineConfig({
   cloudflare: false,
-  tanstackStart: {
-    server: { entry: "server", preset: "vercel" },
-  },
 });
