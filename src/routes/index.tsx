@@ -10,16 +10,6 @@ import { SmileScoreQuiz } from "@/components/unique/SmileScoreQuiz";
 
 export const Route = createFileRoute("/")({
   component: Index,
-  head: () => ({
-    meta: [
-      { title: "Decare Dental, Modern Dentistry, Genuinely Caring" },
-      {
-        name: "description",
-        content:
-          "Award winning dental clinic. Gentle cleanings, cosmetic dentistry, implants and same day emergency care. Book in 30 seconds.",
-      },
-    ],
-  }),
 });
 
 function LogoStrip() {
