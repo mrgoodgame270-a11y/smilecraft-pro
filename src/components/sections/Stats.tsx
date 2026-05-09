@@ -29,8 +29,14 @@ function CountUp({ to, suffix }: { to: number; suffix: string }) {
     obs.observe(el);
     return () => obs.disconnect();
   }, [to]);
-  const display = to >= 1000 ? Math.floor(n).toLocaleString() : to % 1 ? n.toFixed(1) : Math.floor(n);
-  return <span ref={ref}>{display}{suffix}</span>;
+  const display =
+    to >= 1000 ? Math.floor(n).toLocaleString() : to % 1 ? n.toFixed(1) : Math.floor(n);
+  return (
+    <span ref={ref}>
+      {display}
+      {suffix}
+    </span>
+  );
 }
 
 export function Stats() {

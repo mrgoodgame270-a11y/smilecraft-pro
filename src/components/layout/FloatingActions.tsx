@@ -8,16 +8,23 @@ type Msg = { role: "bot" | "user"; text: string };
 const QUICK = ["Book Appointment", "Pricing", "Emergency", "Insurance"];
 
 const REPLIES: Record<string, string> = {
-  "book appointment": "Great, I can book you in. What day works best, today, tomorrow, or later this week?",
-  pricing: "Our memberships start at $49 per month. Cleanings are $99 without insurance. Want me to send a full price list?",
-  emergency: "I am sorry, please call us now at +1 (555) 123 4567 for same day care. Or share your address and I will find your nearest spot.",
-  insurance: "We accept all major PPOs (Delta, MetLife, Cigna, Aetna, BCBS) and offer a $49 per month plan if you are uninsured.",
+  "book appointment":
+    "Great, I can book you in. What day works best, today, tomorrow, or later this week?",
+  pricing:
+    "Our memberships start at $49 per month. Cleanings are $99 without insurance. Want me to send a full price list?",
+  emergency:
+    "I am sorry, please call us now at +1 (555) 123 4567 for same day care. Or share your address and I will find your nearest spot.",
+  insurance:
+    "We accept all major PPOs (Delta, MetLife, Cigna, Aetna, BCBS) and offer a $49 per month plan if you are uninsured.",
 };
 
 export function FloatingActions() {
   const [open, setOpen] = useState(false);
   const [msgs, setMsgs] = useState<Msg[]>([
-    { role: "bot", text: "Hi! I am Decare's AI assistant. I can book appointments, answer questions, and help with insurance. What brings you in today?" },
+    {
+      role: "bot",
+      text: "Hi! I am Decare's AI assistant. I can book appointments, answer questions, and help with insurance. What brings you in today?",
+    },
   ]);
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
@@ -30,7 +37,9 @@ export function FloatingActions() {
     setTimeout(() => {
       const key = text.toLowerCase();
       const found = Object.keys(REPLIES).find((k) => key.includes(k));
-      const reply = found ? REPLIES[found] : "Got it. A team member will follow up shortly. In the meantime, would you like to pick a time on our calendar?";
+      const reply = found
+        ? REPLIES[found]
+        : "Got it. A team member will follow up shortly. In the meantime, would you like to pick a time on our calendar?";
       setMsgs((m) => [...m, { role: "bot", text: reply }]);
       setTyping(false);
     }, 900);
@@ -92,24 +101,41 @@ export function FloatingActions() {
                     Typically replies in seconds
                   </div>
                 </div>
-                <button onClick={() => setOpen(false)} className="w-10 h-10 rounded-full bg-cream/15 grid place-items-center hover:bg-cream/25" aria-label="Close chat">
+                <button
+                  onClick={() => setOpen(false)}
+                  className="w-10 h-10 rounded-full bg-cream/15 grid place-items-center hover:bg-cream/25"
+                  aria-label="Close chat"
+                >
                   <X className="w-4 h-4" />
                 </button>
               </div>
 
               <div className="flex-1 overflow-y-auto p-5 space-y-3 bg-cloud">
                 {msgs.map((m, i) => (
-                  <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
-                    <div className={`max-w-[80%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
-                      m.role === "user" ? "gradient-cta text-cream rounded-br-sm" : "bg-cream text-ink shadow-soft rounded-bl-sm"
-                    }`}>{m.text}</div>
+                  <div
+                    key={i}
+                    className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+                  >
+                    <div
+                      className={`max-w-[80%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
+                        m.role === "user"
+                          ? "gradient-cta text-cream rounded-br-sm"
+                          : "bg-cream text-ink shadow-soft rounded-bl-sm"
+                      }`}
+                    >
+                      {m.text}
+                    </div>
                   </div>
                 ))}
                 {typing && (
                   <div className="flex justify-start">
                     <div className="bg-cream shadow-soft rounded-2xl px-4 py-3 flex gap-1">
                       {[0, 1, 2].map((i) => (
-                        <span key={i} className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse-dot" style={{ animationDelay: `${i * 0.15}s` }} />
+                        <span
+                          key={i}
+                          className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse-dot"
+                          style={{ animationDelay: `${i * 0.15}s` }}
+                        />
                       ))}
                     </div>
                   </div>
@@ -120,19 +146,39 @@ export function FloatingActions() {
                 {msgs.length <= 1 && (
                   <div className="flex flex-wrap gap-2 mb-3">
                     {QUICK.map((q) => (
-                      <button key={q} onClick={() => send(q)} className="text-xs bg-cloud text-primary-deep font-semibold px-3 py-1.5 rounded-full hover:bg-accent/15">
+                      <button
+                        key={q}
+                        onClick={() => send(q)}
+                        className="text-xs bg-cloud text-primary-deep font-semibold px-3 py-1.5 rounded-full hover:bg-accent/15"
+                      >
                         {q}
                       </button>
                     ))}
                   </div>
                 )}
-                <form onSubmit={(e) => { e.preventDefault(); send(input); }} className="flex items-center gap-2 bg-cloud rounded-full p-1.5">
-                  <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type a message..." className="flex-1 bg-transparent px-4 py-2 outline-none text-sm" />
-                  <button className="w-10 h-10 rounded-full gradient-cta grid place-items-center shadow-glow" aria-label="Send message">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    send(input);
+                  }}
+                  className="flex items-center gap-2 bg-cloud rounded-full p-1.5"
+                >
+                  <input
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    placeholder="Type a message..."
+                    className="flex-1 bg-transparent px-4 py-2 outline-none text-sm"
+                  />
+                  <button
+                    className="w-10 h-10 rounded-full gradient-cta grid place-items-center shadow-glow"
+                    aria-label="Send message"
+                  >
                     <Send className="w-4 h-4 text-cream" />
                   </button>
                 </form>
-                <div className="text-[10px] text-slate-body text-center mt-2">Powered by Decare AI</div>
+                <div className="text-[10px] text-slate-body text-center mt-2">
+                  Powered by Decare AI
+                </div>
               </div>
             </motion.div>
           </>

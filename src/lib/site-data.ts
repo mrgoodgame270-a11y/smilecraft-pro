@@ -40,7 +40,8 @@ export const SERVICES = [
     slug: "implants",
     icon: "Bone",
     title: "Dental Implants",
-    short: "Permanent, natural looking tooth replacement using same day digital implant technology.",
+    short:
+      "Permanent, natural looking tooth replacement using same day digital implant technology.",
     long: "Replace missing teeth with implants that look, feel and function like the real thing. Our 3D guided placement means less recovery time and predictable results.",
     price: "From $2,495",
   },
@@ -48,13 +49,14 @@ export const SERVICES = [
     slug: "emergency",
     icon: "Siren",
     title: "Emergency Care",
-    short: "Same day appointments for tooth pain, chips and accidents. Call any time, day or night.",
+    short:
+      "Same day appointments for tooth pain, chips and accidents. Call any time, day or night.",
     long: "Toothache, broken crown, knocked out tooth? Our emergency line is staffed 24/7 and we hold same day slots open every weekday for urgent cases.",
     price: "Call now",
   },
 ] as const;
 
-export type Service = typeof SERVICES[number];
+export type Service = (typeof SERVICES)[number];
 
 export const DENTISTS = [
   {

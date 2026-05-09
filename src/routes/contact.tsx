@@ -10,7 +10,10 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Decare Dental, Visit Us or Get In Touch" },
-      { name: "description", content: "Find our address, hours, phone and contact form. Open 7 days for emergencies." },
+      {
+        name: "description",
+        content: "Find our address, hours, phone and contact form. Open 7 days for emergencies.",
+      },
     ],
   }),
 });
@@ -37,19 +40,33 @@ function Contact() {
         <div className="max-w-7xl mx-auto px-5 md:px-6 grid lg:grid-cols-2 gap-10 items-stretch">
           <div>
             <div className="space-y-5">
-              <Row icon={MapPin}><b className="text-ink">{ADDRESS.split(",")[0]},</b> {ADDRESS.split(",").slice(1).join(",")}</Row>
-              <Row icon={Phone}><a href={`tel:${PHONE_TEL}`} className="hover:text-primary">{PHONE_DISPLAY}</a></Row>
-              <Row icon={Mail}><a href={`mailto:${EMAIL}`} className="hover:text-primary">{EMAIL}</a></Row>
+              <Row icon={MapPin}>
+                <b className="text-ink">{ADDRESS.split(",")[0]},</b>{" "}
+                {ADDRESS.split(",").slice(1).join(",")}
+              </Row>
+              <Row icon={Phone}>
+                <a href={`tel:${PHONE_TEL}`} className="hover:text-primary">
+                  {PHONE_DISPLAY}
+                </a>
+              </Row>
+              <Row icon={Mail}>
+                <a href={`mailto:${EMAIL}`} className="hover:text-primary">
+                  {EMAIL}
+                </a>
+              </Row>
               <Row icon={Car}>Free parking on premises (60 spots)</Row>
               <Row icon={Train}>2 minute walk from Cedar Metro Station</Row>
             </div>
 
             <div className="mt-6 bg-cream-deep rounded-2xl p-5">
-              <div className="flex items-center gap-2 font-display font-bold text-ink"><Clock className="w-4 h-4 text-primary" /> Office Hours</div>
+              <div className="flex items-center gap-2 font-display font-bold text-ink">
+                <Clock className="w-4 h-4 text-primary" /> Office Hours
+              </div>
               <div className="mt-3 space-y-2 text-sm">
                 {HOURS.map(([d, h]) => (
                   <div key={d} className="flex justify-between text-slate-body">
-                    <span>{d}</span><span className="font-semibold text-ink">{h}</span>
+                    <span>{d}</span>
+                    <span className="font-semibold text-ink">{h}</span>
                   </div>
                 ))}
               </div>
@@ -57,7 +74,8 @@ function Contact() {
 
             <a
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`}
-              target="_blank" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-block gradient-cta text-cream font-semibold px-6 py-3 rounded-full shadow-glow hover:-translate-y-0.5 transition"
             >
               Get Directions →
@@ -65,21 +83,46 @@ function Contact() {
           </div>
 
           <form
-            onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+            onSubmit={(e) => {
+              e.preventDefault();
+              setSent(true);
+            }}
             className="bg-cream-deep rounded-3xl p-6 md:p-8 shadow-soft"
           >
             <h3 className="font-display font-bold text-xl text-ink">Send us a message</h3>
             {sent ? (
               <div className="mt-6 bg-success/10 rounded-2xl p-5 text-center">
-                <div className="font-display font-bold text-ink">Got it. We will reply shortly.</div>
-                <p className="text-sm text-slate-body mt-1">Most messages are answered within 15 minutes during business hours.</p>
+                <div className="font-display font-bold text-ink">
+                  Got it. We will reply shortly.
+                </div>
+                <p className="text-sm text-slate-body mt-1">
+                  Most messages are answered within 15 minutes during business hours.
+                </p>
               </div>
             ) : (
               <div className="mt-5 space-y-3">
-                <input required placeholder="Your name" className="w-full h-12 px-4 rounded-xl border-2 border-border bg-cream focus:border-primary outline-none" />
-                <input required type="email" placeholder="Email address" className="w-full h-12 px-4 rounded-xl border-2 border-border bg-cream focus:border-primary outline-none" />
-                <input type="tel" placeholder="Phone (optional)" className="w-full h-12 px-4 rounded-xl border-2 border-border bg-cream focus:border-primary outline-none" />
-                <textarea required placeholder="How can we help?" rows={4} className="w-full p-4 rounded-xl border-2 border-border bg-cream focus:border-primary outline-none" />
+                <input
+                  required
+                  placeholder="Your name"
+                  className="w-full h-12 px-4 rounded-xl border-2 border-border bg-cream focus:border-primary outline-none"
+                />
+                <input
+                  required
+                  type="email"
+                  placeholder="Email address"
+                  className="w-full h-12 px-4 rounded-xl border-2 border-border bg-cream focus:border-primary outline-none"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone (optional)"
+                  className="w-full h-12 px-4 rounded-xl border-2 border-border bg-cream focus:border-primary outline-none"
+                />
+                <textarea
+                  required
+                  placeholder="How can we help?"
+                  rows={4}
+                  className="w-full p-4 rounded-xl border-2 border-border bg-cream focus:border-primary outline-none"
+                />
                 <button className="w-full gradient-cta text-cream font-semibold h-12 rounded-full shadow-glow flex items-center justify-center gap-2">
                   Send Message <Send className="w-4 h-4" />
                 </button>
@@ -108,7 +151,7 @@ function Contact() {
     </>
   );
 }
-function Row({ icon: Icon, children }: { icon: any; children: React.ReactNode }) {
+function Row({ icon: Icon, children }: { icon: React.ElementType; children: React.ReactNode }) {
   return (
     <div className="flex items-start gap-3 text-slate-body">
       <span className="w-10 h-10 rounded-xl bg-primary/10 grid place-items-center shrink-0">

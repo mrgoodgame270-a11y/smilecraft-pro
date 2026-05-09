@@ -49,8 +49,16 @@ export const Route = createFileRoute("/blog/$slug")({
       { name: "description", content: loaderData?.post?.body[0] ?? "" },
     ],
   }),
-  errorComponent: ({ error }) => <div className="py-32 text-center"><p>{error.message}</p></div>,
-  notFoundComponent: () => <div className="py-32 text-center"><p>Article not found.</p></div>,
+  errorComponent: ({ error }) => (
+    <div className="py-32 text-center">
+      <p>{error.message}</p>
+    </div>
+  ),
+  notFoundComponent: () => (
+    <div className="py-32 text-center">
+      <p>Article not found.</p>
+    </div>
+  ),
 });
 
 function BlogPost() {
@@ -59,7 +67,9 @@ function BlogPost() {
     return (
       <div className="py-32 text-center">
         <h1 className="font-display font-bold text-3xl">Article not found</h1>
-        <Link to="/blog" className="mt-4 inline-block text-primary font-semibold">← All articles</Link>
+        <Link to="/blog" className="mt-4 inline-block text-primary font-semibold">
+          ← All articles
+        </Link>
       </div>
     );
   }
@@ -72,12 +82,20 @@ function BlogPost() {
       />
       <article className="py-12 lg:py-16 bg-cream">
         <div className="max-w-3xl mx-auto px-5 md:px-6">
-          <img src={post.img} alt={post.title} className="w-full aspect-[16/9] object-cover rounded-3xl shadow-soft" />
+          <img
+            src={post.img}
+            alt={post.title}
+            className="w-full aspect-[16/9] object-cover rounded-3xl shadow-soft"
+          />
           <div className="mt-8 space-y-5 text-slate-body text-[1.0625rem] leading-[1.8]">
-            {post.body.map((p: string, i: number) => <p key={i}>{p}</p>)}
+            {post.body.map((p: string, i: number) => (
+              <p key={i}>{p}</p>
+            ))}
           </div>
           <div className="mt-10">
-            <Link to="/blog" className="text-primary font-semibold">← Back to all articles</Link>
+            <Link to="/blog" className="text-primary font-semibold">
+              ← Back to all articles
+            </Link>
           </div>
         </div>
       </article>

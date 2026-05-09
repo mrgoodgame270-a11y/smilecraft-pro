@@ -13,7 +13,11 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Decare Dental, Modern Dentistry, Genuinely Caring" },
-      { name: "description", content: "Award winning dental clinic. Gentle cleanings, cosmetic dentistry, implants and same day emergency care. Book in 30 seconds." },
+      {
+        name: "description",
+        content:
+          "Award winning dental clinic. Gentle cleanings, cosmetic dentistry, implants and same day emergency care. Book in 30 seconds.",
+      },
     ],
   }),
 });
@@ -28,7 +32,10 @@ function LogoStrip() {
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 md:gap-x-14 gap-y-4 opacity-55">
           {logos.map((l, i) => (
-            <span key={i} className="font-display font-bold text-lg md:text-xl text-primary-deep tracking-wide">
+            <span
+              key={i}
+              className="font-display font-bold text-lg md:text-xl text-primary-deep tracking-wide"
+            >
               ◆ {l}
             </span>
           ))}
@@ -49,7 +56,10 @@ function Index() {
       <Stats />
       <Testimonials compact />
       <div className="bg-cream py-10 text-center">
-        <Link to="/testimonials" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+        <Link
+          to="/testimonials"
+          className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+        >
           Read all reviews <ArrowRight className="w-4 h-4" />
         </Link>
       </div>

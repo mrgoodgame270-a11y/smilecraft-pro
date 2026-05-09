@@ -8,7 +8,11 @@ export const Route = createFileRoute("/dentists")({
   head: () => ({
     meta: [
       { title: "Meet Our Dentists at Decare Dental" },
-      { name: "description", content: "Specialists in cosmetic dentistry, orthodontics, pediatric care and implants. Friendly, certified and genuinely caring." },
+      {
+        name: "description",
+        content:
+          "Specialists in cosmetic dentistry, orthodontics, pediatric care and implants. Friendly, certified and genuinely caring.",
+      },
     ],
   }),
 });

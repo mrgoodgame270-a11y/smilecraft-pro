@@ -11,24 +11,59 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About Decare Dental, Our Mission and Team" },
-      { name: "description", content: "Meet the people behind Decare Dental. 15+ years of warm, modern dentistry built on trust, precision and genuine care." },
+      {
+        name: "description",
+        content:
+          "Meet the people behind Decare Dental. 15+ years of warm, modern dentistry built on trust, precision and genuine care.",
+      },
     ],
   }),
 });
 
 const VALUES = [
-  { icon: Heart, title: "Genuine Care", copy: "We treat every patient like family. No upselling, no pressure, just honest recommendations." },
-  { icon: Shield, title: "Safety First", copy: "Hospital grade sterilization, modern protocols, and certified specialists in every chair." },
-  { icon: Sparkles, title: "Modern Tech", copy: "3D imaging, same day crowns, digital impressions. Less guesswork, better outcomes." },
-  { icon: Users, title: "Built On Trust", copy: "Transparent pricing, clear treatment plans, no surprise bills. Ever." },
+  {
+    icon: Heart,
+    title: "Genuine Care",
+    copy: "We treat every patient like family. No upselling, no pressure, just honest recommendations.",
+  },
+  {
+    icon: Shield,
+    title: "Safety First",
+    copy: "Hospital grade sterilization, modern protocols, and certified specialists in every chair.",
+  },
+  {
+    icon: Sparkles,
+    title: "Modern Tech",
+    copy: "3D imaging, same day crowns, digital impressions. Less guesswork, better outcomes.",
+  },
+  {
+    icon: Users,
+    title: "Built On Trust",
+    copy: "Transparent pricing, clear treatment plans, no surprise bills. Ever.",
+  },
 ];
 
 const TIMELINE = [
-  { year: "2010", text: "Decare Dental opens its doors with 2 dentists and one mission: warm, modern care." },
-  { year: "2015", text: "We pass 5,000 patients and add our pediatric and orthodontics specialty wings." },
-  { year: "2019", text: "Same day digital implant workflow launches, cutting recovery time by 60%." },
-  { year: "2023", text: "AI patient assistant goes live. We answer 100% of inquiries in under 30 seconds." },
-  { year: "2025", text: "Awarded Best Clinic of the Year. 25,000 patients trust Decare with their smiles." },
+  {
+    year: "2010",
+    text: "Decare Dental opens its doors with 2 dentists and one mission: warm, modern care.",
+  },
+  {
+    year: "2015",
+    text: "We pass 5,000 patients and add our pediatric and orthodontics specialty wings.",
+  },
+  {
+    year: "2019",
+    text: "Same day digital implant workflow launches, cutting recovery time by 60%.",
+  },
+  {
+    year: "2023",
+    text: "AI patient assistant goes live. We answer 100% of inquiries in under 30 seconds.",
+  },
+  {
+    year: "2025",
+    text: "Awarded Best Clinic of the Year. 25,000 patients trust Decare with their smiles.",
+  },
 ];
 
 function About() {
@@ -46,7 +81,9 @@ function About() {
       <section className="py-20 lg:py-28 bg-cloud">
         <div className="max-w-7xl mx-auto px-5 md:px-6">
           <div className="text-center max-w-2xl mx-auto">
-            <span className="text-[12px] md:text-[13px] font-semibold tracking-[0.18em] uppercase text-primary">Our Values</span>
+            <span className="text-[12px] md:text-[13px] font-semibold tracking-[0.18em] uppercase text-primary">
+              Our Values
+            </span>
             <h2 className="mt-3 font-display font-extrabold text-ink text-[clamp(1.75rem,4vw,3rem)]">
               What we believe in
             </h2>
@@ -75,7 +112,9 @@ function About() {
       <section className="py-20 lg:py-28 bg-cream">
         <div className="max-w-3xl mx-auto px-5 md:px-6">
           <div className="text-center">
-            <span className="text-[12px] md:text-[13px] font-semibold tracking-[0.18em] uppercase text-primary">Our Story</span>
+            <span className="text-[12px] md:text-[13px] font-semibold tracking-[0.18em] uppercase text-primary">
+              Our Story
+            </span>
             <h2 className="mt-3 font-display font-extrabold text-ink text-[clamp(1.75rem,4vw,3rem)]">
               15 years of <span className="gradient-text">building trust</span>
             </h2>

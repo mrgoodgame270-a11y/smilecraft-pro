@@ -8,7 +8,11 @@ export const Route = createFileRoute("/booking")({
   head: () => ({
     meta: [
       { title: "Book Your Visit, Decare Dental" },
-      { name: "description", content: "Pick your service, choose a slot, get instant SMS confirmation. No phone tag, no waiting." },
+      {
+        name: "description",
+        content:
+          "Pick your service, choose a slot, get instant SMS confirmation. No phone tag, no waiting.",
+      },
     ],
   }),
 });
@@ -38,7 +42,9 @@ function BookingPage() {
                   { icon: ShieldCheck, t: "All major insurance plans accepted" },
                 ].map((x) => (
                   <li key={x.t} className="flex items-center gap-3 text-ink">
-                    <span className="w-9 h-9 rounded-xl bg-cream grid place-items-center"><x.icon className="w-4 h-4 text-primary" /></span>
+                    <span className="w-9 h-9 rounded-xl bg-cream grid place-items-center">
+                      <x.icon className="w-4 h-4 text-primary" />
+                    </span>
                     {x.t}
                   </li>
                 ))}
@@ -46,7 +52,12 @@ function BookingPage() {
             </div>
             <div className="bg-primary-deep text-cream rounded-3xl p-6 shadow-soft">
               <div className="text-sm text-cream/70">Need help right now?</div>
-              <a href="tel:+15551234567" className="mt-2 block font-display font-extrabold text-2xl">+1 (555) 123 4567</a>
+              <a
+                href="tel:+15551234567"
+                className="mt-2 block font-display font-extrabold text-2xl"
+              >
+                +1 (555) 123 4567
+              </a>
               <div className="text-xs text-cream/70 mt-1">24/7 emergency line</div>
             </div>
           </aside>

@@ -10,20 +10,48 @@ export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
       { title: "Frequently Asked Questions, Decare Dental" },
-      { name: "description", content: "Insurance, pain, kids, payment plans, emergencies. Honest answers to the questions patients ask most." },
+      {
+        name: "description",
+        content:
+          "Insurance, pain, kids, payment plans, emergencies. Honest answers to the questions patients ask most.",
+      },
     ],
   }),
 });
 
 const FAQS = [
-  { q: "Do you accept dental insurance?", a: "Yes, we work with all major PPO plans and submit claims for you. We also offer flexible in house membership plans for uninsured patients." },
-  { q: "Will my treatment hurt?", a: "Our team uses gentle techniques, modern numbing, and sedation options when needed. Most patients report no pain at all during routine procedures." },
-  { q: "How early should kids start visiting?", a: "By age 1 or within 6 months of the first tooth. Early visits help us prevent issues and build positive associations with the dentist." },
-  { q: "Do you offer payment plans?", a: "Absolutely. We partner with CareCredit and offer 0% interest plans for treatments over $300, plus our in house membership." },
-  { q: "What about dental emergencies after hours?", a: "Call our 24/7 emergency line. A dentist on call will respond within 15 minutes and can usually see you the same day." },
-  { q: "Do you offer sedation dentistry?", a: "Yes. We provide nitrous oxide, oral conscious sedation, and IV sedation depending on your comfort needs and procedure." },
-  { q: "How long does professional whitening last?", a: "Results typically last 1 to 3 years depending on diet and habits. We will show you how to maintain it at home with custom trays." },
-  { q: "Can root canals be done in one visit?", a: "In most cases, yes. Our digital tools let us complete most root canals in a single 60 to 90 minute appointment." },
+  {
+    q: "Do you accept dental insurance?",
+    a: "Yes, we work with all major PPO plans and submit claims for you. We also offer flexible in house membership plans for uninsured patients.",
+  },
+  {
+    q: "Will my treatment hurt?",
+    a: "Our team uses gentle techniques, modern numbing, and sedation options when needed. Most patients report no pain at all during routine procedures.",
+  },
+  {
+    q: "How early should kids start visiting?",
+    a: "By age 1 or within 6 months of the first tooth. Early visits help us prevent issues and build positive associations with the dentist.",
+  },
+  {
+    q: "Do you offer payment plans?",
+    a: "Absolutely. We partner with CareCredit and offer 0% interest plans for treatments over $300, plus our in house membership.",
+  },
+  {
+    q: "What about dental emergencies after hours?",
+    a: "Call our 24/7 emergency line. A dentist on call will respond within 15 minutes and can usually see you the same day.",
+  },
+  {
+    q: "Do you offer sedation dentistry?",
+    a: "Yes. We provide nitrous oxide, oral conscious sedation, and IV sedation depending on your comfort needs and procedure.",
+  },
+  {
+    q: "How long does professional whitening last?",
+    a: "Results typically last 1 to 3 years depending on diet and habits. We will show you how to maintain it at home with custom trays.",
+  },
+  {
+    q: "Can root canals be done in one visit?",
+    a: "In most cases, yes. Our digital tools let us complete most root canals in a single 60 to 90 minute appointment.",
+  },
 ];
 
 function FaqPage() {
@@ -46,7 +74,9 @@ function FaqPage() {
                 aria-expanded={open === i}
               >
                 <span className="font-display font-bold text-ink">{f.q}</span>
-                <Plus className={`w-5 h-5 text-primary shrink-0 transition-transform ${open === i ? "rotate-45" : ""}`} />
+                <Plus
+                  className={`w-5 h-5 text-primary shrink-0 transition-transform ${open === i ? "rotate-45" : ""}`}
+                />
               </button>
               <AnimatePresence>
                 {open === i && (

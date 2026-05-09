@@ -78,7 +78,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Decare Dental, Modern Dentistry, Genuinely Caring" },
-      { name: "description", content: "Award winning dental clinic. Gentle cleanings, cosmetic dentistry, implants and same day emergency care. Book in 30 seconds." },
+      {
+        name: "description",
+        content:
+          "Award winning dental clinic. Gentle cleanings, cosmetic dentistry, implants and same day emergency care. Book in 30 seconds.",
+      },
       { name: "author", content: "Decare Dental" },
       { property: "og:title", content: "Decare Dental, Modern Dentistry, Genuinely Caring" },
       { property: "og:description", content: "Gentle, premium dental care. Book in 30 seconds." },
@@ -89,7 +93,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,

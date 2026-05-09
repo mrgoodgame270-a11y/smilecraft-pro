@@ -1,7 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronRight, Home } from "lucide-react";
 
-export function Breadcrumbs({ items }: { items: { label: string; to?: string; params?: any }[] }) {
+export function Breadcrumbs({
+  items,
+}: {
+  items: { label: string; to?: string; params?: Record<string, string> }[];
+}) {
   return (
     <nav aria-label="Breadcrumb" className="text-sm text-slate-body">
       <ol className="flex items-center flex-wrap gap-1">
@@ -14,7 +18,9 @@ export function Breadcrumbs({ items }: { items: { label: string; to?: string; pa
           <li key={i} className="flex items-center gap-1">
             <ChevronRight className="w-3.5 h-3.5 opacity-50" />
             {it.to ? (
-              <Link to={it.to as any} params={it.params} className="hover:text-primary">{it.label}</Link>
+              <Link to={it.to as string} params={it.params} className="hover:text-primary">
+                {it.label}
+              </Link>
             ) : (
               <span className="text-ink font-medium">{it.label}</span>
             )}
@@ -25,11 +31,16 @@ export function Breadcrumbs({ items }: { items: { label: string; to?: string; pa
   );
 }
 
-export function PageHero({ eyebrow, title, subtitle, breadcrumbs }: {
+export function PageHero({
+  eyebrow,
+  title,
+  subtitle,
+  breadcrumbs,
+}: {
   eyebrow?: string;
   title: string;
   subtitle?: string;
-  breadcrumbs?: { label: string; to?: string; params?: any }[];
+  breadcrumbs?: { label: string; to?: string; params?: Record<string, string> }[];
 }) {
   return (
     <section className="relative gradient-warm overflow-hidden">
@@ -45,7 +56,9 @@ export function PageHero({ eyebrow, title, subtitle, breadcrumbs }: {
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-4 text-slate-body text-base md:text-lg leading-[1.6] max-w-2xl">{subtitle}</p>
+          <p className="mt-4 text-slate-body text-base md:text-lg leading-[1.6] max-w-2xl">
+            {subtitle}
+          </p>
         )}
       </div>
     </section>

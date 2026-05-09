@@ -9,7 +9,11 @@ export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Our Dental Services, From Cleanings to Implants" },
-      { name: "description", content: "Complete dental care under one roof. General dentistry, cosmetic, orthodontics, pediatric, implants and 24/7 emergency care." },
+      {
+        name: "description",
+        content:
+          "Complete dental care under one roof. General dentistry, cosmetic, orthodontics, pediatric, implants and 24/7 emergency care.",
+      },
     ],
   }),
 });
@@ -27,11 +31,15 @@ function ServicesPage() {
       <section className="py-20 lg:py-28 bg-cream">
         <div className="max-w-7xl mx-auto px-5 md:px-6">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-[12px] md:text-[13px] font-semibold tracking-[0.18em] uppercase text-accent">Tooth Explorer</span>
+            <span className="text-[12px] md:text-[13px] font-semibold tracking-[0.18em] uppercase text-accent">
+              Tooth Explorer
+            </span>
             <h2 className="mt-3 font-display font-extrabold text-ink text-[clamp(1.75rem,4vw,3rem)]">
               What treats <span className="gradient-text">what</span>
             </h2>
-            <p className="mt-3 text-slate-body">Hover over a part of the tooth to see which treatments target it.</p>
+            <p className="mt-3 text-slate-body">
+              Hover over a part of the tooth to see which treatments target it.
+            </p>
           </div>
           <ToothExplorer />
         </div>

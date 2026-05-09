@@ -1,10 +1,30 @@
 import { useState } from "react";
 
 const PARTS = [
-  { id: "enamel", label: "Enamel", color: "#FBE4D8", treats: "Whitening, bonding, fluoride treatments protect and brighten the outer layer." },
-  { id: "dentin", label: "Dentin", color: "#F4A28C", treats: "Fillings and crowns repair this softer layer when decay reaches it." },
-  { id: "pulp", label: "Pulp", color: "#E07856", treats: "Root canal therapy treats infection deep inside the tooth nerve and blood vessels." },
-  { id: "root", label: "Root", color: "#1B8A9E", treats: "Implants and gum care anchor the tooth and address the supporting structure." },
+  {
+    id: "enamel",
+    label: "Enamel",
+    color: "#FBE4D8",
+    treats: "Whitening, bonding, fluoride treatments protect and brighten the outer layer.",
+  },
+  {
+    id: "dentin",
+    label: "Dentin",
+    color: "#F4A28C",
+    treats: "Fillings and crowns repair this softer layer when decay reaches it.",
+  },
+  {
+    id: "pulp",
+    label: "Pulp",
+    color: "#E07856",
+    treats: "Root canal therapy treats infection deep inside the tooth nerve and blood vessels.",
+  },
+  {
+    id: "root",
+    label: "Root",
+    color: "#1B8A9E",
+    treats: "Implants and gum care anchor the tooth and address the supporting structure.",
+  },
 ];
 
 export function ToothExplorer() {

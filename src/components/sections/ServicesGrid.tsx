@@ -1,10 +1,24 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Stethoscope, Smile, AlignHorizontalSpaceAround, Baby, Bone, Siren, type LucideIcon } from "lucide-react";
+import {
+  ArrowRight,
+  Stethoscope,
+  Smile,
+  AlignHorizontalSpaceAround,
+  Baby,
+  Bone,
+  Siren,
+  type LucideIcon,
+} from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { SERVICES } from "@/lib/site-data";
 
 const ICONS: Record<string, LucideIcon> = {
-  Stethoscope, Smile, AlignHorizontalSpaceAround, Baby, Bone, Siren,
+  Stethoscope,
+  Smile,
+  AlignHorizontalSpaceAround,
+  Baby,
+  Bone,
+  Siren,
 };
 
 export function ServicesGrid({ limit, heading = true }: { limit?: number; heading?: boolean }) {
@@ -14,7 +28,9 @@ export function ServicesGrid({ limit, heading = true }: { limit?: number; headin
       <div className="max-w-7xl mx-auto px-5 md:px-6">
         {heading && (
           <div className="text-center max-w-2xl mx-auto">
-            <span className="text-[12px] md:text-[13px] font-semibold tracking-[0.18em] uppercase text-primary">Our Services</span>
+            <span className="text-[12px] md:text-[13px] font-semibold tracking-[0.18em] uppercase text-primary">
+              Our Services
+            </span>
             <h2 className="mt-3 font-display font-extrabold text-ink text-[clamp(1.75rem,4vw,3.5rem)] leading-[1.1]">
               Complete Dental Care, <span className="gradient-text">Under One Roof</span>
             </h2>
@@ -53,7 +69,10 @@ export function ServicesGrid({ limit, heading = true }: { limit?: number; headin
 
         {limit && (
           <div className="mt-10 text-center">
-            <Link to="/services" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all text-base">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all text-base"
+            >
               View all services <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

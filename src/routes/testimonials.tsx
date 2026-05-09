@@ -8,7 +8,11 @@ export const Route = createFileRoute("/testimonials")({
   head: () => ({
     meta: [
       { title: "Patient Reviews and Stories, Decare Dental" },
-      { name: "description", content: "Real reviews from verified patients. 5 star Google rating, 25,000+ patients treated." },
+      {
+        name: "description",
+        content:
+          "Real reviews from verified patients. 5 star Google rating, 25,000+ patients treated.",
+      },
     ],
   }),
 });

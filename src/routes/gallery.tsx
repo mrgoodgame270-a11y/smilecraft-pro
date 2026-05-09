@@ -13,7 +13,11 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Smile Gallery, Real Patient Results, Decare Dental" },
-      { name: "description", content: "Before and after photos of real patients. Cosmetic, orthodontic, and restorative results." },
+      {
+        name: "description",
+        content:
+          "Before and after photos of real patients. Cosmetic, orthodontic, and restorative results.",
+      },
     ],
   }),
 });
@@ -39,10 +43,20 @@ function GalleryPage() {
       <section className="py-16 bg-cream">
         <div className="max-w-7xl mx-auto px-5 md:px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {ITEMS.map((it, i) => (
-            <div key={i} className="group relative rounded-3xl overflow-hidden shadow-soft aspect-[4/3]">
-              <img src={it.img} alt={it.label} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div
+              key={i}
+              className="group relative rounded-3xl overflow-hidden shadow-soft aspect-[4/3]"
+            >
+              <img
+                src={it.img}
+                alt={it.label}
+                loading="lazy"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/80 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-5">
-                <span className="text-xs font-semibold text-accent-soft uppercase tracking-widest">{it.tag}</span>
+                <span className="text-xs font-semibold text-accent-soft uppercase tracking-widest">
+                  {it.tag}
+                </span>
                 <span className="text-cream font-display font-bold text-lg">{it.label}</span>
               </div>
             </div>

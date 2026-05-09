@@ -29,7 +29,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-5 md:mt-6 text-[1rem] md:text-[1.0625rem] leading-[1.7] text-slate-body max-w-xl">
-            From gentle cleanings to advanced cosmetic dentistry, our team delivers exceptional care in a calming, modern environment. Book your visit in 30 seconds.
+            From gentle cleanings to advanced cosmetic dentistry, our team delivers exceptional care
+            in a calming, modern environment. Book your visit in 30 seconds.
           </p>
 
           {/* CTAs (replaces email field) */}
@@ -101,9 +102,15 @@ export function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <img src={doc1} alt="Dr. Mubara" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" />
+            <img
+              src={doc1}
+              alt="Dr. Mubara"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover"
+            />
             <div>
-              <div className="font-display font-bold text-[13px] sm:text-sm text-ink">Dr. Mubara Doe</div>
+              <div className="font-display font-bold text-[13px] sm:text-sm text-ink">
+                Dr. Mubara Doe
+              </div>
               <div className="text-[11px] sm:text-xs text-slate-body">Lead Cosmetic Dentist</div>
             </div>
           </motion.div>
@@ -118,7 +125,16 @@ export function Hero() {
               <div className="relative w-12 h-12">
                 <svg viewBox="0 0 36 36" className="w-12 h-12 -rotate-90">
                   <circle cx="18" cy="18" r="15" fill="none" stroke="#FBE4D8" strokeWidth="3" />
-                  <circle cx="18" cy="18" r="15" fill="none" stroke="url(#tg)" strokeWidth="3" strokeLinecap="round" strokeDasharray="92 100" />
+                  <circle
+                    cx="18"
+                    cy="18"
+                    r="15"
+                    fill="none"
+                    stroke="url(#tg)"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeDasharray="92 100"
+                  />
                   <defs>
                     <linearGradient id="tg">
                       <stop offset="0" stopColor="#1B8A9E" />
@@ -126,7 +142,9 @@ export function Hero() {
                     </linearGradient>
                   </defs>
                 </svg>
-                <div className="absolute inset-0 grid place-items-center text-[11px] font-extrabold text-ink">98%</div>
+                <div className="absolute inset-0 grid place-items-center text-[11px] font-extrabold text-ink">
+                  98%
+                </div>
               </div>
               <div>
                 <div className="font-bold text-sm text-ink">Trusted Score</div>
@@ -142,7 +160,9 @@ export function Hero() {
             transition={{ delay: 0.6, duration: 0.5 }}
           >
             <span className="w-2.5 h-2.5 rounded-full bg-success animate-pulse-dot" />
-            <span className="text-[11px] sm:text-xs font-semibold text-ink">Open · Mon to Sat · 9 to 9</span>
+            <span className="text-[11px] sm:text-xs font-semibold text-ink">
+              Open · Mon to Sat · 9 to 9
+            </span>
           </motion.div>
         </div>
       </div>

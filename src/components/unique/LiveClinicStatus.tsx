@@ -7,7 +7,7 @@ function getStatus() {
   const min = now.getMinutes();
 
   // Mon to Fri 9 to 21, Sat 9 to 18, Sun closed
-  let openHour = 9;
+  const openHour = 9;
   let closeHour = 21;
   if (day === 0) return { open: false, label: "Closed today, opens Monday 9 AM" };
   if (day === 6) closeHour = 18;
@@ -30,7 +30,9 @@ export function LiveClinicStatus() {
 
   return (
     <span className="flex items-center gap-2 text-[12px]">
-      <span className={`w-2 h-2 rounded-full ${status.open ? "bg-success animate-pulse-dot" : "bg-coral"}`} />
+      <span
+        className={`w-2 h-2 rounded-full ${status.open ? "bg-success animate-pulse-dot" : "bg-coral"}`}
+      />
       <span suppressHydrationWarning>{status.label}</span>
     </span>
   );

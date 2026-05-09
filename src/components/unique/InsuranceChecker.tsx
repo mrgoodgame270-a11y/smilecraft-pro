@@ -35,18 +35,30 @@ export function InsuranceChecker() {
       >
         <option value="">Choose your insurance provider</option>
         {PROVIDERS.map((p) => (
-          <option key={p.name} value={p.name}>{p.name}</option>
+          <option key={p.name} value={p.name}>
+            {p.name}
+          </option>
         ))}
       </select>
 
       {provider && (
-        <div className={`mt-5 rounded-2xl p-5 flex items-start gap-3 ${provider.accepted ? "bg-success/10" : "bg-coral/10"}`}>
-          <div className={`w-10 h-10 rounded-full grid place-items-center shrink-0 ${provider.accepted ? "bg-success" : "bg-coral"}`}>
-            {provider.accepted ? <Check className="w-5 h-5 text-cream" strokeWidth={3} /> : <X className="w-5 h-5 text-cream" strokeWidth={3} />}
+        <div
+          className={`mt-5 rounded-2xl p-5 flex items-start gap-3 ${provider.accepted ? "bg-success/10" : "bg-coral/10"}`}
+        >
+          <div
+            className={`w-10 h-10 rounded-full grid place-items-center shrink-0 ${provider.accepted ? "bg-success" : "bg-coral"}`}
+          >
+            {provider.accepted ? (
+              <Check className="w-5 h-5 text-cream" strokeWidth={3} />
+            ) : (
+              <X className="w-5 h-5 text-cream" strokeWidth={3} />
+            )}
           </div>
           <div>
             <div className="font-display font-bold text-ink">
-              {provider.accepted ? `Yes, we accept ${provider.name}` : `${provider.name} is out of network`}
+              {provider.accepted
+                ? `Yes, we accept ${provider.name}`
+                : `${provider.name} is out of network`}
             </div>
             <div className="text-sm text-slate-body mt-1">{provider.note}</div>
           </div>
@@ -54,7 +66,11 @@ export function InsuranceChecker() {
       )}
 
       <p className="mt-4 text-xs text-slate-body">
-        Not sure? Call us at <a href="tel:+15551234567" className="text-primary font-semibold">+1 (555) 123 4567</a> and we will check for you.
+        Not sure? Call us at{" "}
+        <a href="tel:+15551234567" className="text-primary font-semibold">
+          +1 (555) 123 4567
+        </a>{" "}
+        and we will check for you.
       </p>
     </div>
   );
