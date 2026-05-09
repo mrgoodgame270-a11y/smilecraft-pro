@@ -74,7 +74,7 @@ function BlogPost() {
         <div className="max-w-3xl mx-auto px-5 md:px-6">
           <img src={post.img} alt={post.title} className="w-full aspect-[16/9] object-cover rounded-3xl shadow-soft" />
           <div className="mt-8 space-y-5 text-slate-body text-[1.0625rem] leading-[1.8]">
-            {post.body.map((p, i) => <p key={i}>{p}</p>)}
+            {post.body.map((p: string, i: number) => <p key={i}>{p}</p>)}
           </div>
           <div className="mt-10">
             <Link to="/blog" className="text-primary font-semibold">← Back to all articles</Link>
